@@ -28,7 +28,6 @@ class PaletteViewController: UIViewController {
         super.viewDidLoad()
         
         setupElements()
-        setColor()
         setSliders()
     }
     
