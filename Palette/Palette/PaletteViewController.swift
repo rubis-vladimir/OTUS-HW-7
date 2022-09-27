@@ -59,14 +59,16 @@ class PaletteViewController: UIViewController {
     }
 }
 
-
+//MARK: - UITextFieldDelegate
 extension PaletteViewController: UITextFieldDelegate {
     
+    /// Для скрытия клавиатуры
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
+    /// Для изменения значения слайдеров после ввода значения
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         guard let text = textField.text else { return }
@@ -83,6 +85,8 @@ extension PaletteViewController: UITextFieldDelegate {
             setColor()
             return
         }
+        showAlert(title: "Wrong format!",
+                  message: "Please enter correct value")
     }
 }
 
